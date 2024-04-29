@@ -1,9 +1,22 @@
 # Importar la clase Player
 from characters.player import Player
+from utils.events import explores
 
+getname = input("ingrese su nombre ")
+action = ''
+ore = 0
+actualDef = 3
+actualDmg = 2
 # Crear una instancia de Player
-player = Player("agus", 1, 100)
+player = Player(getname, 1, 100, actualDef, actualDmg, 0)
 
-print(player.name)
-print(player.level)
-print(player.life)
+
+while player.life > 0:
+  print(player.name)
+  print('nivel ' + str(player.level))
+  print('vida ' + str(player.life))
+  print('defensa ' + str(player.defence))
+  print('daño ' + str(player.damage))
+  print('oro ' + str(player.ore))
+  action = input("que accion dese realisar")
+  explores(action)
